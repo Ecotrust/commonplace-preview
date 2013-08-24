@@ -377,7 +377,7 @@ tagline: Supporting tagline
 <!-- <div id="map">
       <div class="swiper-slide marker-slide" id="skeena-map" data-hash="skeena-map">
 </div> -->
-<div id="map">
+<div id="map" class="hide-map">
   <div class="swiper-container swiper-root">
 
   <div class="swiper-wrapper">
@@ -390,7 +390,8 @@ tagline: Supporting tagline
         <h1>{{ page.title }}</h1>
       </div>
        <div class="page-footer">
-         <a href="#">
+        <img class="loader-gif" src="{{ASSET_PATH}}skeena/img/ajax-loader.gif"/>
+         <a href="#" class="hidden">
            <i class="icon-chevron-down"></i>
          </a>
        </div>
@@ -439,7 +440,7 @@ tagline: Supporting tagline
 
                   <div class="swiper-container gallery" id="voices-gallery">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide light">
+                      <div class="swiper-slide light" >
                           <div class="sub-toc-wrapper gallery-slide">
                           {% for post in site.tags.voices reversed %}
                             <div class="sub-toc-item" style="width:19%;">
@@ -504,10 +505,10 @@ tagline: Supporting tagline
           <div class="swiper-slide" data-img="{{ASSET_PATH}}skeena/img/article_openers/{{ post.story-img }}" data-hash="{{post.url | replace:'/',''}}" id="{{post.url | replace:'/',''}}">
             <div class="story-header">
               {% if post.author %}
-              <h3>{{ post.author }}</h3>      
+              <h3 class="hidden">{{ post.author }}</h3>      
               <hr/>
               {% endif %}
-              <h1>{{ post.title }}</h1>
+              <h1 class="hidden">{{ post.title }}</h1>
             </div>
 
             {% if post.story-img-caption %}
@@ -545,7 +546,7 @@ tagline: Supporting tagline
                 <div class="story-sidebar">
 
                 <!-- AddThis Button BEGIN -->
-                <div class="addthis_toolbox addthis_default_style addthis_16x16_style hidden-tablet">
+                <div class="addthis_toolbox addthis_default_style addthis_16x16_style">
                 <a class="addthis_button_facebook" addthis:url="http://commonplacemagazine.org/#{{post.url | replace:'/',''}}"></a>
                 <a class="addthis_button_twitter" addthis:url="http://commonplacemagazine.org/#{{post.url | replace:'/',''}}"></a>
                 <a class="addthis_button_google_plusone_share" addthis:url="http://commonplacemagazine.org/#{{post.url | replace:'/',''}}"></a>

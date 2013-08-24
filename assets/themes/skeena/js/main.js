@@ -159,7 +159,9 @@ var shownPopup;
 
                 // update the background image
                 if (backgroundImage && currentBackgroundImage !== backgroundImage && !preserveBodyBackground) {
+                    
                     $('.swiper-root').backstretch(backgroundImage, {fade:450}); 
+                    
                     if ($('.backstretch',$('.swiper-root')).length>2) $('.backstretch:lt(1)',$('.swiper-root')).remove();                   
                 } else if (! backgroundImage && !preserveBodyBackground) {
                     $('.swiper-root').children('.backstretch').remove();
@@ -631,19 +633,26 @@ var shownPopup;
         // $('.page-footer').on('click touchstart', function () {
         //     mySwiper.swipeNext();            
         // }); // end page footer scroll to next page click binding
-
-
-
+        
         // manage hash changes
         if (originalHash) {
             mySwiper.swipeTo($(originalHash).index());    
         }
 
+
+
+   
         // init the audio player for voices
         audiojs.events.ready(function() {
             var as = audiojs.createAll();
         });
+        $('.story-header .hidden').removeClass('hidden');
 
+        $('.hide-map').removeClass('hide-map');
+        $('.cover-slide .page-footer').find('a').removeClass('hidden');
+        $('.loader-gif').addClass('hidden');
+
+        
     }); //end document.ready function
     
 
